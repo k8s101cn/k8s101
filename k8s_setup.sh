@@ -52,7 +52,6 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 #? Install CNI & Untaint node
 #?-----------------------------
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/master/manifests/calico.yaml
-#kubectl taint node $(hostname) node-role.kubernetes.io/master:NoSchedule-
 kubectl taint node $(hostname) node-role.kubernetes.io/control-plane:NoSchedule-
 
 #?--------------------------------
